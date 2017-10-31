@@ -1,6 +1,8 @@
 package com.BabyNames;
 
-public class BabyName {
+import static sun.management.snmp.jvminstr.JvmThreadInstanceEntryImpl.ThreadStateMap.Byte1.other;
+
+public class BabyName implements Comparable{
     private String name;
     private boolean gender;
     private int nameCount;
@@ -59,6 +61,11 @@ public class BabyName {
                 ", nameCount=" + nameCount +
                 ", birthYear=" + birthYear +
                 '}';
+    }
+    @Override
+    public int compareTo(Object other) {
+        BabyName b = (BabyName) other;
+        return (b.nameCount - nameCount);
     }
 
     //for testing

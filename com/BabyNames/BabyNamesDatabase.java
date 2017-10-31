@@ -1,6 +1,7 @@
 package com.BabyNames;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BabyNamesDatabase {
     private ArrayList<BabyName> babyNames;
@@ -9,7 +10,7 @@ public class BabyNamesDatabase {
         babyNames = new ArrayList<BabyName>();
     }
     //Mutator Methods
-    public void readBabyNameData() {
+    public void readBabyNameData(String filename) {
 
     }
     //Accessor Methods
@@ -48,17 +49,32 @@ public class BabyNamesDatabase {
         }
     }
     public ArrayList<BabyName> searchForName(String name) {
+        ArrayList<BabyName> newList = new ArrayList<BabyName>();
         for (BabyName x : babyNames) {
             if(x.getName().equalsIgnoreCase(name)) {
-                // print list of names
+                newList.add(x);
             }
         }
+        Collections.sort(newList);
+        return newList;
     }
     public ArrayList<BabyName> searchForYear(int year) {
+        ArrayList<BabyName> newList = new ArrayList<BabyName>();
         for (BabyName x : babyNames) {
             if(x.getBirthYear() == year) {
-                // print list of names in that year
+                newList.add(x);
+            }
+        }
+        Collections.sort(newList);
+        return newList;
+    }
+    public ArrayList <BabyName> topTenNames(int year) {
+        Collections.sort(babyNames);
+        for (int i = 0; i < babyNames.size(); i++) {
+            if () {
+
             }
         }
     }
+
 }

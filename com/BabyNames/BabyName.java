@@ -1,7 +1,5 @@
 package com.BabyNames;
 
-import static sun.management.snmp.jvminstr.JvmThreadInstanceEntryImpl.ThreadStateMap.Byte1.other;
-
 public class BabyName implements Comparable{
     private String name;
     private boolean gender;
@@ -13,6 +11,9 @@ public class BabyName implements Comparable{
         this.gender = gender;
         this.nameCount = nameCount;
         this.birthYear = birthYear;
+    }
+    public BabyName() {
+
     }
     //if gender is true, then it's a female
     public boolean isFemale() {
@@ -40,7 +41,7 @@ public class BabyName implements Comparable{
         this.name = name;
     }
 
-    public void setGender(boolean gender) {
+      public void setGender(boolean gender) {
         this.gender = gender;
     }
 
@@ -55,12 +56,11 @@ public class BabyName implements Comparable{
     //returns formatted string
     @Override
     public String toString() {
-        return "BabyName{" +
-                "name='" + name + '\'' +
-                ", gender=" + gender +
-                ", nameCount=" + nameCount +
-                ", birthYear=" + birthYear +
-                '}';
+        return "BabyName: " +
+                " name = " + name +
+                " gender = " + gender +
+                " nameCount = " + nameCount +
+                " birthYear = " + birthYear;
     }
     @Override
     public int compareTo(Object other) {
@@ -68,8 +68,4 @@ public class BabyName implements Comparable{
         return (b.nameCount - nameCount);
     }
 
-    //for testing
-    public static void main(String[] args) {
-
-    }
 }
